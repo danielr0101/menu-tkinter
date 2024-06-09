@@ -17,31 +17,31 @@ class Ventas(tk.Frame):
         title.pack()
         title.place(x=5, y=0, width=1090, height=90)
 
-        frame_container = tk.Frame(self, bg="#dddddd", highlightbackground="gray", highlightthickness=1)
+        frame_container = tk.Frame(self, bg="#d5d5d5", highlightbackground="gray", highlightthickness=1)
         frame_container.pack()
         frame_container.place(x=0, y=100, width=1100, height=550)
 
-        lblFrameInfFactura = LabelFrame(frame_container, text="Informacion de Ventas", bg="#dddddd", font="sans 16 bold")
+        lblFrameInfFactura = LabelFrame(frame_container, text="Informacion de Ventas", bg="#d5d5d5", font="sans 16 bold")
         lblFrameInfFactura.place(x=10, y=10, width=1078, height=80)
 
-        lblNroFactura = tk.Label(lblFrameInfFactura, text="Nro. de Factura: ", bg="#dddddd", font="sans 12 bold")
+        lblNroFactura = tk.Label(lblFrameInfFactura, text="Nro. de Factura: ", bg="#d5d5d5", font="sans 12 bold")
         lblNroFactura.place(x=10, y=10)
         self.nroFactura = tk.StringVar()
 
         self.entryNroFactura = ttk.Entry(lblFrameInfFactura, textvariable=self.nroFactura, state="reandoly", font="sans 12 bold", justify="right")
         self.entryNroFactura.place(x=143, y=11, width=100)
 
-        lblProducto = tk.Label(lblFrameInfFactura, text="Producto: ", bg="#dddddd", font="sans 12 bold")
+        lblProducto = tk.Label(lblFrameInfFactura, text="Producto: ", bg="#d5d5d5", font="sans 12 bold")
         lblProducto.place(x=250, y=10)
         self.entryProducto = ttk.Entry(lblFrameInfFactura, font="sans 12 bold")
         self.entryProducto.place(x=340, y=11, width=180)
 
-        lblPrecio = tk.Label(lblFrameInfFactura, text="Precio: ", bg="#dddddd", font="sans 12 bold")
+        lblPrecio = tk.Label(lblFrameInfFactura, text="Precio: ", bg="#d5d5d5", font="sans 12 bold")
         lblPrecio.place(x=525, y=10)
         self.entryPrecio = ttk.Entry(lblFrameInfFactura, font="sans 12 bold")
         self.entryPrecio.place(x=590, y=11, width=180)
 
-        lblCantidad = tk.Label(lblFrameInfFactura, text="Cantidad: ", bg="#dddddd", font="sans 12 bold")
+        lblCantidad = tk.Label(lblFrameInfFactura, text="Cantidad: ", bg="#d5d5d5", font="sans 12 bold")
         lblCantidad.place(x=775, y=10)
         self.entryCantidad = ttk.Entry(lblFrameInfFactura, font="sans 12 bold")
         self.entryCantidad.place(x=860, y=11, width=180)
@@ -71,7 +71,7 @@ class Ventas(tk.Frame):
 
         self.tree.pack(expand=True, fill=BOTH)
 
-        lblFrameOpciones = LabelFrame(frame_container, text="Opciones", bg="#dddddd", font="sans 12 bold")
+        lblFrameOpciones = LabelFrame(frame_container, text="Opciones", bg="#d5d5d5", font="sans 16 bold")
         lblFrameOpciones.place(x=10, y=380, width=1078, height=100)
 
         btnAgregar = tk.Button(lblFrameOpciones, text="Agregar", bg="#0288D1", font="sans 12 bold")
