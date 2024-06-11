@@ -28,27 +28,27 @@ class Inventario(tk.Frame):
         lblNombre = Label(lblFrameProducto, text="Nombre: ", font="sans 12 bold", bg="#d5d5d5")
         lblNombre.place(x=10, y=20)
         self.nombre = ttk.Entry(lblFrameProducto, font="sans 12 bold")
-        self.nombre.place(x=140, y=20, width=240)
+        self.nombre.place(x=140, y=16, width=240)
 
         lblProveedor = Label(lblFrameProducto, text="Proveedor: ", font="sans 12 bold", bg="#d5d5d5")
         lblProveedor.place(x=10, y=83.75)
         self.proveedor = ttk.Entry(lblFrameProducto, font="sans 12 bold")
-        self.proveedor.place(x=140, y=83.75, width=240)
+        self.proveedor.place(x=140, y=79.75, width=240)
 
         lblPrecio = Label(lblFrameProducto, text="Precio: ", font="sans 12 bold", bg="#d5d5d5")
         lblPrecio.place(x=10, y=147.5)
         self.precio = ttk.Entry(lblFrameProducto, font="sans 12 bold")
-        self.precio.place(x=140, y=147.5, width=240)
+        self.precio.place(x=140, y=143.5, width=240)
 
         lblCosto = Label(lblFrameProducto, text="Costo: ", font="sans 12 bold", bg="#d5d5d5")
         lblCosto.place(x=10, y=211.25)
         self.costo = ttk.Entry(lblFrameProducto, font="sans 12 bold")
-        self.costo.place(x=140, y=211.25, width=240)
+        self.costo.place(x=140, y=207.25, width=240)
 
         lblStock = Label(lblFrameProducto, text="Stock: ", font="sans 12 bold", bg="#d5d5d5")
         lblStock.place(x=10, y=275)
         self.stock = ttk.Entry(lblFrameProducto, font="sans 12 bold")
-        self.stock.place(x=140, y=275, width=240)
+        self.stock.place(x=140, y=271, width=240)
 
         btnAgregar = tk.Button(lblFrameProducto, text="Agregar", bg="#0288D1", font="sans 12 bold")
         btnAgregar.place(x=80, y=340, width=240, height=50)
