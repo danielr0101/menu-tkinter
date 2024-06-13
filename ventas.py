@@ -195,9 +195,21 @@ class Ventas(tk.Frame):
         
         ventana_pago = Toplevel(self)
         ventana_pago.title("Realizar Pago")
-        ventana_pago.geometry("400x400")
+        screen_width = self.winfo_screenwidth()
+        screen_height = self.winfo_screenheight()
+        window_width = 400
+        window_height = 400
+        x = (screen_width - window_width) // 2
+        y = (screen_height - window_height) // 2
+        ventana_pago.geometry(f"{window_width}x{window_height}+{x}+{y}")
+        #ventana_pago.geometry("400x400")
         ventana_pago.config(bg="#d5d5d5")
         ventana_pago.resizable(False, False)
+
+        ventana_pago.transient(self.master)  
+        ventana_pago.grab_set()  
+        ventana_pago.focus_set()  
+        ventana_pago.lift()
 
         label_total = tk.Label(ventana_pago, bg="#d5d5d5", text=f"Total a pagar: ${self.obtener_total():.2f}", font= "sans 18 bold")
         label_total.place(x=70, y=20)
@@ -225,10 +237,10 @@ class Ventas(tk.Frame):
         boton_calcular = tk.Button(ventana_pago, text="Calcular vuelto", bg="#0288D1", font="sans 12 bold", command=calcular_cambio)
         boton_calcular.place(x=100, y=240, width=240, height=40)
 
-        boton_pagar = tk.Button(ventana_pago, text="Pagar", bg="#0288D1", font="sans 12 bold", command=lambda: self.pagar(ventana_pago, entry_cantidad_pagada, label_cambio))
+        boton_pagar = tk.Button(ventana_pago, text="Pagar", bg="#0288D1", font="sans 12 bold", command=lambda: self.pagar(ventana_pago, entry_cantidad_pagada))
         boton_pagar.place(x=100, y=300, width=240, height=40)
     
-    def pagar(self, ventana_pago, entry_cantidad_pagada, label_cambio):
+    def pagar(self, ventana_pago, entry_cantidad_pagada):
         try:
             cantidad_pagada = float(entry_cantidad_pagada.get())
             total = self.obtener_total()
@@ -255,7 +267,7 @@ class Ventas(tk.Frame):
                 conn.commit()
                 messagebox.showinfo("Exito", "Venta registrada exitosamente")
 
-                self.obtener_numero_factura_actual += 1
+                self.numero_factura_actual += 1
                 self.mostrar_numero_factura()
 
                 for child in self.tree.get_children():
@@ -293,8 +305,15 @@ class Ventas(tk.Frame):
 
     def abrir_ventana_factura(self):
         ventana_factura = Toplevel(self)
-        ventana_factura.title("Factura")
-        ventana_factura.geometry("800x500")
+        ventana_factura.title("Factura")        
+        window_width = 800
+        window_height = 500
+        screen_width = self.winfo_screenwidth()
+        screen_height = self.winfo_screenheight()
+        x = (screen_width - window_width) // 2
+        y = (screen_height - window_height) // 2
+        ventana_factura.geometry(f"{window_width}x{window_height}+{x}+{y}")
+        #ventana_factura.geometry("800x500")
         ventana_factura.config(bg="#d5d5d5")
         ventana_factura.resizable(False, False)
 
