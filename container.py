@@ -13,7 +13,7 @@ class Container(tk.Frame):
         self.config(bg="#D5D5D5")
         self.widgets()
 
-    def show_frames(self, container):
+    def show_frames(self, container, title):
         top_level = tk.Toplevel(self)
         frame = container(top_level)
         frame.config(bg="#D5D5D5")
@@ -32,11 +32,13 @@ class Container(tk.Frame):
         top_level.focus_set()  
         top_level.lift()
 
+        top_level.title(title)
+
     def ventas(self):
-        self.show_frames(Ventas)
+        self.show_frames(Ventas,"Ventas")
 
     def inventario(self):
-        self.show_frames(Inventario)
+        self.show_frames(Inventario, "Inventario")
 
     def widgets(self):
 

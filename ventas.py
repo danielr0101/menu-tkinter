@@ -12,7 +12,7 @@ class Ventas(tk.Frame):
         self.numero_factura_actual = self.obtener_numero_factura_actual()
         self.widgets()
         self.mostrar_numero_factura()
-
+        
     def widgets(self):
         
         frame_title = tk.Frame(self, bg="#dddddd", highlightbackground="gray", highlightthickness=1)
